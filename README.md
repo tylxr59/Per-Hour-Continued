@@ -1,6 +1,8 @@
-[![CurseForge downloads](http://cf.way2muchnoise.eu/full_486717_downloads.svg)](https://www.curseforge.com/wow/addons/per-hour)
+Forked from https://github.com/eavidaze/wow-addon-per-hour
 
-# Per Hour
+Reputation and XP are fixed, Honor tracking is untested.
+
+# Per Hour Continued
 
 Do you want to know your performance? The Per Hour Addon is for you!
 

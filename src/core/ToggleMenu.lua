@@ -80,12 +80,12 @@ end
 
 local function RenderElements()
     -- render toggle menu title
-    local titlePerHonor = ToggleMenuFrame:CreateFontString(ToggleMenuFrame, nil, "GameFontHighlightSmall")
+    local titlePerHonor = ToggleMenuFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     titlePerHonor:SetHeight(TitleHeight)
     titlePerHonor:SetPoint("TOP", 0, -2)
     titlePerHonor:SetText("Per Hour")
     
-    local titleToggle = ToggleMenuFrame:CreateFontString(ToggleMenuFrame, nil, "GameFontNormalSmall")
+    local titleToggle = ToggleMenuFrame:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
     titleToggle:SetHeight(TitleHeight)
     titleToggle:SetPoint("TOP", titlePerHonor, "BOTTOM")
     titleToggle:SetText("Toggle Menu")

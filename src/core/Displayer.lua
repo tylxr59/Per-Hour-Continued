@@ -110,15 +110,15 @@ local function RenderElements(contextModule)
     local Frame = contextModule.Frame
 
     -- time             | [left]       |
-    local timeText = Frame:CreateFontString(Frame, "OVERLAY", "GameFontHighlightSmall")
+    local timeText = Frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     timeText:SetPoint("TOP", (FrameWidth/4)*-1, GetMarginTop())
     timeText:SetText("TIME")
-    -- time valeu       | [left]       |
-    local timeValue = Frame:CreateFontString(Frame, "OVERLAY", "GameFontNormal")
+    -- time value       | [left]       |
+    local timeValue = Frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     timeValue:SetPoint("TOP", timeText, "BOTTOM", 0, PaddingTop(Padding))
 
     -- element          |       [right] |
-    local elementText = Frame:CreateFontString(Frame, "OVERLAY", "GameFontHighlightSmall")
+    local elementText = Frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     elementText:SetPoint("TOP", (FrameWidth/4), GetMarginTop())
     if string.len(contextModule.Name) <= 6 then
         elementText:SetText(contextModule.Name:upper())
@@ -126,24 +126,24 @@ local function RenderElements(contextModule)
         elementText:SetText(contextModule.ShortName:upper())
     end
     -- element value    |       [right] |
-    local elementValue = Frame:CreateFontString(Frame, "OVERLAY", "GameFontNormal")
+    local elementValue = Frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     elementValue:SetPoint("TOP", elementText, "BOTTOM", 0, PaddingTop(Padding))
 
     -- element/h        |   [center]   |
-    local elementPerHourText = Frame:CreateFontString(Frame, "OVERLAY", "GameFontHighlightSmall")
+    local elementPerHourText = Frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     elementPerHourText:SetPoint("TOP", 0, -39)
     elementPerHourText:SetText(contextModule.ShortName.."/h")
     -- element/h value  |   [center]   |
-    local elementPerHourValue = Frame:CreateFontString(Frame, "OVERLAY", "GameFontNormal")
+    local elementPerHourValue = Frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     elementPerHourValue:SetPoint("TOP", elementPerHourText, "BOTTOM", 0, PaddingTop(Padding))
     elementPerHourValue:SetFont("Fonts\\ARIALN.TTF", 32)
 
     -- element/m        | [left]       |
-    local elementPerMinuteText = Frame:CreateFontString(Frame, "OVERLAY", "GameFontHighlightSmall")
+    local elementPerMinuteText = Frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     elementPerMinuteText:SetPoint("TOP", (FrameWidth/4)*-1, -91)
     elementPerMinuteText:SetText(contextModule.ShortName.."/min")
     -- element/m value  | [left]       |
-    local elementPerMinuteValue = Frame:CreateFontString(Frame, "OVERLAY", "GameFontNormal")
+    local elementPerMinuteValue = Frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     elementPerMinuteValue:SetPoint("TOP", elementPerMinuteText, "BOTTOM", 0, PaddingTop(Padding))
 
     -- set module texts
@@ -221,7 +221,7 @@ local function RenderSendTo(contextModule, sendToButton)
     sendToFrameTexture:SetAllPoints(sendToFrame)
     
     -- TITLE
-    local sendToTitle = sendToFrame:CreateFontString(sendToFrame, nil, "GameFontHighlightSmall")
+    local sendToTitle = sendToFrame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
     sendToTitle:SetHeight(sendToOptionHeight)
     sendToTitle:SetPoint("TOPLEFT", PaddingRight(Margin), PaddingTop(Padding))
     sendToTitle:SetText("Send to:")

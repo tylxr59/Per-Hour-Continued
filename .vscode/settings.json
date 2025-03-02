@@ -1,4 +1,22 @@
 {
     "WOW_LOCAL_PATH": "C:\\Program Files (x86)\\World of Warcraft",
-    "ADDON_NAME_LOCAL_PATH": "per-hour"
+    "ADDON_NAME_LOCAL_PATH": "Per Hour Continued",
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.runtime.builtin": {
+        "basic": "disable",
+        "debug": "disable",
+        "io": "disable",
+        "math": "disable",
+        "os": "disable",
+        "package": "disable",
+        "string": "disable",
+        "table": "disable",
+        "utf8": "disable"
+    },
+    "Lua.workspace.library": [
+        "~\\.vscode\\extensions\\ketho.wow-api-0.18.2\\Annotations"
+    ],
+    "Lua.diagnostics.globals": [
+        "DEFAULT_CHAT_FRAME"
+    ]
 }
