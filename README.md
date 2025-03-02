@@ -15,7 +15,7 @@ Reputation and XP tracking are fixed, while Honor tracking is untested.
     - Go to `Character Info` window > `Reputation` tab > click on a reputation > check `Show as Experience Bar`.
   - Changing the selected reputation will reset the tracker.
 
-![Addon Screenshot](https://raw.githubusercontent.com/eavidaze/wow-addon-per-hour/main/img/ss1.png "Screenshot")
+![Addon Screenshot](https://raw.githubusercontent.com/tylxr59/PerHour_Continued/refs/heads/main/screenshot.jpg)
 
 ## Installation
 
