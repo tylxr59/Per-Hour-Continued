@@ -1,7 +1,5 @@
 # PerHour Continued
 
-Forked from [eavidaze/wow-addon-per-hour](https://github.com/eavidaze/wow-addon-per-hour)
-
 Reputation and XP tracking are fixed, while Honor tracking is untested.
 
 ## Overview
@@ -28,7 +26,7 @@ Reputation and XP tracking are fixed, while Honor tracking is untested.
    - The folder name must match the `.TOC` file name.
    - Example: `{wow_folder}\Interface\AddOns\PerHour_Continued\PerHour_Continued.TOC`
 
-You can also find us on [CurseForge](https://www.curseforge.com/wow/addons/per-hour) or search for **PerHour Continued** in your preferred addon manager.
+You can also find us on [CurseForge](https://www.curseforge.com/wow/addons/perhour-continued) or search for **PerHour Continued** in your preferred addon manager.
 
 ## License
 
