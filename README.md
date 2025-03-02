@@ -1,41 +1,42 @@
+# PerHour Continued
+
+Forked from [eavidaze/wow-addon-per-hour](https://github.com/eavidaze/wow-addon-per-hour)
+
+Reputation and XP tracking are fixed, while Honor tracking is untested.
+
+## Overview
+
+**PerHour Continued** is a World of Warcraft addon designed to help you measure your in-game performance. Track your experience, honor, and reputation gains with ease!
+
+### Features
+
+- **Experience Tracking**
+- **Honor Tracking**
+- **Reputation Tracking**
+  - Select a reputation to display as an Experience Bar:
+    - Go to `Character Info` window > `Reputation` tab > click on a reputation > check `Show as Experience Bar`.
+  - Changing the selected reputation will reset the tracker.
+
+![Addon Screenshot](https://raw.githubusercontent.com/eavidaze/wow-addon-per-hour/main/img/ss1.png "Screenshot")
+
+## Installation
+
+1. **Download** this repository.
+2. **Extract** it to your WoW addons folder:
+   - Usually located at `C:\Program Files (x86)\World of Warcraft\_retail_\Interface\AddOns`
+3. **Rename** the addon folder to `PerHour_Continued`:
+   - The folder name must match the `.TOC` file name.
+   - Example: `{wow_folder}\Interface\AddOns\PerHour_Continued\PerHour_Continued.TOC`
+
+You can also find us on [CurseForge](https://www.curseforge.com/wow/addons/per-hour) or search for **PerHour Continued** in your preferred addon manager.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Author
+
+Created by tylxr (Discord: @tylxr59 / Website: [tylxr.com](https://tylxr.com))
+
 Forked from https://github.com/eavidaze/wow-addon-per-hour
-
-Reputation and XP are fixed, Honor tracking is untested.
-
-# Per Hour Continued
-
-Do you want to know your performance? The Per Hour Addon is for you!
-
-You will be able to measure your performance:
-
-- Experience.
-- Honor.
-- Reputation.
-
-  - A reputation must be selected to be displayed as Experience Bar.
-
-    - `Character Info` window > `Reputation` tab > click in a reputation > check `Show as Experience Bar`.
-
-  - If you change your reputation selected, the tracker will be reseted.
-
-![This image shows the addon in game.](https://raw.githubusercontent.com/eavidaze/wow-addon-per-hour/main/img/ss1.png "Screenshot")
-
-I'll soon add many other measurement options, such as:
-
-- Gold.
-- Etc.
-
-This is an experimental project and feedbacks are welcome!
-
-## How to install?
-
-- Download this repository.
-  - Then extract on **your** wow addons folder.
-    - Usually `C:\Program Files (x86)\World of Warcraft\_classic_\Interface\AddOns`
-  - Then rename the addon folder to `per-hour`.
-    - The folder must have the same name as the `.TOC` file.
-    - Must be like this: `{wow_folder}\Interface\AddOns\per-hour\per-hour.TOC`.
-
-- We are also on CurseForge <https://www.curseforge.com/wow/addons/per-hour>.
-
-- You can also search for **Per Hour** in your addon manager preferred.
+Special thanks to Zwietabak and AssisrMatheus for their inspiration and contributions to the original project.

@@ -4,7 +4,7 @@ BaseModule = {}
 function BaseModule:SendTo(contextModule, chatType)
 
     -- chatType = chatType:upper()
-    local addonNamePrepend = "Per Hour || "
+    local addonNamePrepend = "Per Hour Continued || "
 
     local dottedLine = "................"
     local dottedLineLength = string.len(dottedLine)
@@ -16,7 +16,7 @@ function BaseModule:SendTo(contextModule, chatType)
     end
     
     
-    local greetingsMessage = addonNamePrepend.."A performance tracker AddOn!"
+    local greetingsMessage = addonNamePrepend.."Performance metrics for you!"
     local trackingMessage = addonNamePrepend.."Tracking: ....... "..contextModule.Name
     local perHourMessage = addonNamePrepend..perHourLabel..": "..GetDottedLineByWordSize(string.len(perHourLabel)-1).." "..Utils:DisplayRoundedNumber(contextModule.ElementPerHour, 0)
     local perMinuteMessage = addonNamePrepend..perMinuteLabel..": "..GetDottedLineByWordSize(string.len(perMinuteLabel)).." "..Utils:DisplayRoundedNumber(contextModule.ElementPerMinute, 0)

@@ -1,6 +1,6 @@
 {
     "WOW_LOCAL_PATH": "C:\\Program Files (x86)\\World of Warcraft",
-    "ADDON_NAME_LOCAL_PATH": "Per Hour Continued",
+    "ADDON_NAME_LOCAL_PATH": "PerHour Continued",
     "Lua.runtime.version": "Lua 5.1",
     "Lua.runtime.builtin": {
         "basic": "disable",

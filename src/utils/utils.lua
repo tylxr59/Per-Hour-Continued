@@ -3,11 +3,11 @@ Utils = {}
 
 -- public functions
 function Utils:AddonMessage(text)
-    DEFAULT_CHAT_FRAME:AddMessage("|cFFFFD700Per Hour|r "..text)
+    DEFAULT_CHAT_FRAME:AddMessage("|cFFAB9DF2PerHour Continued|r "..text)
 end
 
 function Utils:Log(text)
-    DEFAULT_CHAT_FRAME:AddMessage("|cFFFF0000###########|r LOG: "..text)
+    DEFAULT_CHAT_FRAME:AddMessage("|cFFAB9DF2###########|r LOG: "..text)
 end
 
 function Utils:DisplayTimer(time)

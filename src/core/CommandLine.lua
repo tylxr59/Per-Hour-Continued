@@ -2,7 +2,7 @@
 CommandLine = {}
 
 -- private variables
-local COMMAND = "/perhour"
+local COMMAND = "/perhourcontinued"
 
 -- public functions
 function CommandLine:Init()

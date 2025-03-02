@@ -65,7 +65,7 @@ Module.CustomOnUpdate = function(self, elapsed)
             if Module.LastReputationName ~= "" and Module.LastReputationName ~= currentName then
                 -- Reputation changed
                 Utils:AddonMessage(Module.Name.." was changed from "..Module.LastReputationName.." to "..currentName..".")
-                Utils:AddonMessage(Module.Name.." reseted.")
+                Utils:AddonMessage(Module.Name.." reset.")
                 BaseModule:ResetModule(Module)
             else
                 -- still in the Reputation

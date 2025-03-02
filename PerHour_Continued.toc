@@ -1,0 +1,13 @@
+## Interface: 110100
+## Title: PerHour |cFFAB9DF2Continued|r
+## Notes: Reputation, experience, and honor metric tracker
+## Author: tylxr (Discord: @tylxr59 / Website: tylxr.com)
+## Version: 1.1
+## SavedVariables: PerHourContinuedAccount_Settings
+## SavedVariablesPerCharacter: PerHourContinuedCharacter_Values
+## IconTexture: Interface\AddOns\PerHour_Continued\img\xp_icon
+
+# Forked from https://github.com/eavidaze/wow-addon-per-hour
+# Retained from original project: Special thanks to Zwietabak (https://github.com/zwietabak) and AssisrMatheus (https://github.com/AssisrMatheus) who inspired me.
+
+src\Init.xml

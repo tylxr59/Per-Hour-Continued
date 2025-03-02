@@ -72,7 +72,7 @@ end
 
 local function ButtonResetOnClick(contextModule)
     BaseModule:ResetModule(contextModule)
-    Utils:AddonMessage(contextModule.Name.." reseted.")
+    Utils:AddonMessage(contextModule.Name.." reset.")
 end
 
 -- private render functions
