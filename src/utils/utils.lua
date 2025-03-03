@@ -11,6 +11,10 @@ function Utils:Log(text)
 end
 
 function Utils:DisplayTimer(time)
+    if not time then
+        return "00:00:00"
+    end
+
     local hours = floor(mod(time, 86400)/3600)
     local minutes = floor(mod(time,3600)/60)
     local seconds = floor(mod(time,60))

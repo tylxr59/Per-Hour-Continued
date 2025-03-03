@@ -24,6 +24,7 @@ Module.RegisteredEvents = {}
 -- custom properties
 Module.LastReputationName = ""
 Module.LastReputationValue = 0
+Module.TimeToNextLevel = 0
 
 -- custom messages
 Module.CustomSendToMessages = {
@@ -34,7 +35,6 @@ Module.CustomSendToMessages = {
         end
         return "Reputation: ...... "..reputationName
     end
-    
 }
 
 -- bugfix:  sometimes, when the screen is reloaded (a portal for example)
@@ -50,14 +50,32 @@ local STATIC_TOLERATION_INTERVAL = 0.1
 -- custom functions
 Module.CustomOnUpdate = function(self, elapsed)
     local reputationReceived = 0
-    --local currentName, standing, minBound, maxBound, currentValue, factionID = GetWatchedFactionInfo()
     local watchedFactionData = C_Reputation.GetWatchedFactionData()
     if watchedFactionData then
         local currentName = watchedFactionData.name
         local currentValue = watchedFactionData.currentStanding
+        local currentThreshold = watchedFactionData.currentReactionThreshold 
+        local nextThreshold = watchedFactionData.nextReactionThreshold
 
-        if currentName~=nil then
+        if nextThreshold then
+            -- Convert negative values to positive for display
+            local displayCurrentValue = math.abs(currentValue - currentThreshold)
+            local displayNextThreshold = math.abs(nextThreshold - currentThreshold)
+            local percentComplete = (displayCurrentValue / displayNextThreshold) * 100
 
+            --Utils:AddonMessage("Current value: " .. displayCurrentValue .. " of " .. displayNextThreshold .. " (" .. percentComplete .. "%) - Next threshold for reputation is: " .. nextThreshold)
+
+            -- Calculate time to next level
+            if Module.ElementPerHour and Module.ElementPerHour > 0 then
+                local reputationRemaining = displayNextThreshold - displayCurrentValue
+                Module.TimeToNextLevel = reputationRemaining / (Module.ElementPerHour / 60) -- Ensure this line is correct
+                --Utils:AddonMessage("Time to next level: " .. Module.TimeToNextLevel .. " minutes")
+            else
+                Module.TimeToNextLevel = 0
+            end
+        end
+
+        if currentName ~= nil then
             -- wait condition is true because the tracker is working
             Module.HasWaitingWithoutFaction = true
             Module.WaitingWithoutFactionTime = 0
@@ -81,9 +99,7 @@ Module.CustomOnUpdate = function(self, elapsed)
                 if not Module.HasPaused then
                     Module.Element = Module.Element + reputationReceived
                 end
-
             end
-
         else
             if Module.HasWaitingWithoutFaction then
                 -- wait condition is reached
@@ -107,6 +123,7 @@ Module.CustomReset = function()
     Module.LastReputationValue = 0
     Module.HasWaitingWithoutFaction = false
     Module.WaitingWithoutFactionTime = 0
+    Module.TimeToNextLevel = 0
 end
 
 Module.CustomStartedMessage = function ()

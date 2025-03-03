@@ -95,14 +95,14 @@ local function RenderFrame(contextModule)
     Frame:SetScript("OnMouseUp", function(self, button)
         self:StopMovingOrSizing()
     end)
-    Frame:SetPoint("CENTER",0,0)
+    Frame:SetPoint("CENTER", 0, 0)
     
     -- Frame:Show() or Frame:Hide() will be later
     -- we have a config for that #display0192364
 
     -- set texture
-    local FrameTexture = Frame:CreateTexture(nil,"BACKGROUND")
-    FrameTexture:SetColorTexture(0,0,0,0.2)
+    local FrameTexture = Frame:CreateTexture(nil, "BACKGROUND")
+    FrameTexture:SetColorTexture(0, 0, 0, 0.2)
     FrameTexture:SetAllPoints(Frame)
 end
 
@@ -146,17 +146,27 @@ local function RenderElements(contextModule)
     local elementPerMinuteValue = Frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     elementPerMinuteValue:SetPoint("TOP", elementPerMinuteText, "BOTTOM", 0, PaddingTop(Padding))
 
+    -- time to next level | [center]   |
+    local timeToNextLevelText = Frame:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+    timeToNextLevelText:SetPoint("TOP", (FrameWidth/4)*1, -91)
+    timeToNextLevelText:SetText("TTL")
+    -- time to next level value | [center]   |
+    local timeToNextLevelValue = Frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    timeToNextLevelValue:SetPoint("TOP", timeToNextLevelText, "BOTTOM", 0, PaddingTop(Padding))
+
     -- set module texts
     contextModule.TimeText = timeText
     contextModule.ElementText = elementText
     contextModule.ElementPerHourText = elementPerHourText
     contextModule.ElementPerMinuteText = elementPerMinuteText
+    contextModule.TimeToNextLevelText = timeToNextLevelText
 
     -- set module values
     contextModule.TimeValue = timeValue
     contextModule.ElementValue = elementValue
     contextModule.ElementPerHourValue = elementPerHourValue
     contextModule.ElementPerMinuteValue = elementPerMinuteValue
+    contextModule.TimeToNextLevelValue = timeToNextLevelValue
 end
 
 local function RenderSendTo(contextModule, sendToButton)
@@ -276,9 +286,9 @@ local function RenderButtons(contextModule)
     -- configure buttons
     local toggleStartButtom = CreateFrame("Button", "$parent-start-button", Frame, "UIMenuButtonStretchTemplate")
     contextModule.ToggleStartButtom = toggleStartButtom
-    toggleStartButtom:SetWidth(FrameWidth - (Margin * 2))
+    toggleStartButtom:SetWidth((FrameWidth/2) - Margin)
     toggleStartButtom:SetHeight(24)
-    toggleStartButtom:SetPoint("BOTTOM", Frame, "BOTTOM", 0, GetMarginBottom())
+    toggleStartButtom:SetPoint("BOTTOMLEFT", Frame, "BOTTOM", 0, GetMarginBottom())
     toggleStartButtom:SetText("Start") -- when save state, we gonna change this
     toggleStartButtom:RegisterForClicks("AnyUp")
     toggleStartButtom:SetScript("OnClick", function(self, button, down)
@@ -287,8 +297,8 @@ local function RenderButtons(contextModule)
     
     local resetButtom = CreateFrame("Button", "$parent-reset-button", Frame, "UIMenuButtonStretchTemplate")
     resetButtom:SetWidth((FrameWidth/2) - Margin)
-    resetButtom:SetHeight(20)
-    resetButtom:SetPoint("BOTTOMRIGHT", toggleStartButtom, "TOPRIGHT", 0, PaddingBottom(Padding))
+    resetButtom:SetHeight(24)
+    resetButtom:SetPoint("BOTTOMRIGHT", Frame, "BOTTOM", 0, GetMarginBottom())
     resetButtom:SetText("Reset")
     resetButtom:RegisterForClicks("AnyUp")
     resetButtom:SetScript("OnClick", function(self, button, down)
@@ -354,8 +364,8 @@ end
 -- public functions
 function Displayer:Init()
     -- for each module I render 1 addon
-    for key,contextModule in pairs(Modules) do
-        
+    for key, contextModule in pairs(Modules) do
+        -- Ensure the frame is created first
         RenderFrame(contextModule)
         RenderElements(contextModule)
         RenderButtons(contextModule)

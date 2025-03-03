@@ -12,7 +12,10 @@ Module.TagName = "honor"
 Module.ShortName = "hon"
 Module.RegisteredEvents = {"CHAT_MSG_COMBAT_HONOR_GAIN","TIME_PLAYED_MSG"}
 
--- custom fucntions
+-- custom properties
+Module.TimeToNextLevel = 0
+
+-- custom functions
 Module.CustomOnEvent = function(self, event, ...)
     if not Module.HasPaused then
     
@@ -26,6 +29,17 @@ Module.CustomOnEvent = function(self, event, ...)
             -- Module.Element = Module.Element + 420
         end
         
+        -- Calculate time to next level
+        if Module.ElementPerHour and Module.ElementPerHour > 0 then
+            local honorRemaining = Module.NextLevelHonor - Module.Element
+            Module.TimeToNextLevel = honorRemaining / (Module.ElementPerHour / 60)
+        else
+            Module.TimeToNextLevel = 0
+        end
     end
-    
+end
+
+Module.CustomReset = function()
+    Module.Element = 0
+    Module.TimeToNextLevel = 0
 end

@@ -44,6 +44,7 @@ function BaseModule:RefreshDisplayedValues(contextModule)
     contextModule.ElementValue:SetText(Utils:DisplayNumber(contextModule.Element))
     contextModule.ElementPerHourValue:SetText(Utils:DisplayRoundedNumber(contextModule.ElementPerHour, 0))
     contextModule.ElementPerMinuteValue:SetText(Utils:DisplayRoundedNumber(contextModule.ElementPerMinute, 0))
+    contextModule.TimeToNextLevelValue:SetText(Utils:DisplayTimer(contextModule.TimeToNextLevel))
 end
 
 -- public functions
